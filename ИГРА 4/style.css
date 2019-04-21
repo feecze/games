@@ -1,0 +1,26 @@
+.clicker {
+  width: 135px;
+  height: 150px;
+  background-color: white;
+  border: none;
+  display: block;
+  position: absolute;
+  top: 30%;
+  right: 50%;
+}
+
+.clicker :hover {
+  cursor: pointer;
+}
+
+.score {
+  position: absolute;
+  top: 40%;
+  right: 53%;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Comic Sans MS', cursive;
+  color: red;
+}
