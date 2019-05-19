@@ -1,0 +1,104 @@
+.header {
+  border: 10px solid blue;
+  text-align: left;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-size: 40px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
+
+p {
+  margin: 0 0;
+}
+
+.calculator {
+  border: 10px solid black;
+  height: 400px;
+  width: 300px;
+  border-radius: 7px;
+}
+
+.result {
+  border: 5px solid black;
+  height: 50px;
+  text-align: right;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-size: 40px;
+  color: green;
+}
+
+.first_row {
+  border: 5px solid black;
+  height: 76px;
+  display: flex;
+}
+
+.second_row {
+  border: 5px solid black;
+  height: 76px;
+  display: flex;
+}
+
+.third_row {
+  border: 5px solid black;
+  height: 76px;
+  display: flex;
+}
+
+.fourth_row {
+  border: 5px solid black;
+  height: 76px;
+  display: flex;
+}
+
+.button_7, 
+.button_8, 
+.button_9,
+.button_div,
+.button_4, 
+.button_5, 
+.button_6, 
+.button_mul, 
+.button_1, 
+.button_2, 
+.button_3, 
+.button_sub, 
+.button_0, 
+.button_dot, 
+.button_equally, 
+.button_add  {
+  border: 5px solid black;
+  box-sizing: border-box;
+  height: 80px;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-size: 40px;
+}
+
+.button_7:hover, 
+.button_8:hover, 
+.button_9:hover,
+.button_div:hover,
+.button_4:hover, 
+.button_5:hover, 
+.button_6:hover, 
+.button_mul:hover, 
+.button_1:hover, 
+.button_2:hover, 
+.button_3:hover, 
+.button_sub:hover, 
+.button_0:hover, 
+.button_dot:hover, 
+.button_equally:hover, 
+.button_add:hover {
+  cursor: pointer;
+  color: green;
+  background-color: lightgrey;
+}
