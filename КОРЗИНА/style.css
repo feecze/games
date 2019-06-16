@@ -1,0 +1,33 @@
+.header {
+    border: 20px solid darkgreen;
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 25px;
+    font-family: Trattatello, fantasн;
+    margin: 10px 0;
+}
+
+.add_product {
+    height: 20px;
+    color: black;
+    background-color: white;
+    margin: 15px 10px;
+}
+
+.product {
+    border: 10px solid black;
+    font-family: Trattatello, fantasy;
+    width: 10%;
+    color: blue;
+    text-align: center;
+    background-color: cornsilk;
+    margin: 5px 10px 5px 10px;
+}
+
+.products_list {
+    display: flex;
+    flex-flow: row wrap;
+}
