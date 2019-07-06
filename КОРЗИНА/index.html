@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Корзина</title>
+    <meta charset="UTF-8">
+    <title>BASKET</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <p class="title">Всякая-всячина (jambalaya)</p>
-        <button class="add_product"s>add</button>
-    </div>
     <div class="main">
-        <ul class="products_list">
-            <div class="product">
-                    <p class="name">Name: 
-                        <span>avocado</span>
-                    </p>
-                    <p class="price">Price: 
-                        <span>13</span>
-                    </p>
-                    <p class="count">Count: 
-                        <span>2</span>
-                    </p>
+        <div class="header">
+            <div class="header_wraper_title">
+                <h1 class="header_title">ТОВАРЫ ЫЫЫ</h1>
             </div>
-            <div class="product">
-                    <p class="name">Name: 
-                        <span>socks</span>
-                    </p>
-                    <p class="price">Price: 
-                        <span>2</span>
-                    </p>
-                    <p class="count">Count: 
-                        <span>90</span>
-                    </p>
+            
+            <div class="header_nav">
+                <button class="header_basket">
+                    <i class="fas fa-shopping-basket"></i>
+                </button>
             </div>
-        </ul>
-    </div>
-    <div class="footer">
-        <p class="copyright">&copy All rights reserved</p>
+        </div>
+
+        <div class="container">
+            <ul class="products_list"></ul>
+            
+            <div class="modal">
+                <div class="modal_label"> 
+                    <label>
+                        name
+                    </label> 
+                    <input class="name" data-type="name" type="text">
+                </div>
+                <div class="modal_label"> 
+                    <label>
+                        price 
+                    </label>
+                    <input class="price" data-type="price" type="text">
+                </div>
+                <div class="modal_label"> 
+                    <label class="modal_label">
+                        short desc.
+                    </label>
+                    <input class="description" data-type="description" type="text">
+                </div>
+                <button class="add_product">Добавить</button>
+            </div>
+            <div class="show_basket">
+                <p>
+                    Number of goods: <span class="num_of_goods"></span>
+                </p>
+                <p>
+                    Total price: <span class="total_price"></span>
+                </p> 
+            </div>
+        </div>
+        
+        <div class="footer">
+            <span>
+                &copy; All rights reserved.
+            </span>
+            <button class="show_modal">add product</button>
+        </div>
     </div>
     <script src="code.js"></script>
 </body>
