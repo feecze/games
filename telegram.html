@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <style>
+  .div1 {
+    display: inline-block;
+    border: 1px solid black;
+    float: left;
+    width: 49%;
+    height: 90vh;
+  }
+
+  .div2 {
+    display: inline-block;
+    border: 1px solid black;
+    float: right;
+    width: 49%;
+    height: 90vh;
+  }
+
+  .message {
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .answer {
+    background: yellow;
+  }
+
+  .myMessage {
+    background: lightblue;
+  }
+  </style>
+</head>
+<body>
+  <div class="div1"></div>
+  <div class="div2"></div>
+  <script>
+    const me = prompt('LOGIN');
+
+    class Message {
+      constructor(author, text) {
+        this.author = author;
+        this.text = text;
+      }
+      render() {
+        return 
+        `<div class="message ${this.author === me ? 'myMessage' : 'answer'}"
+          <h1>${this.author}</h1>
+          <p>${this.text}</p>
+        </div>`
+      }
+    };
+
+    function telega () {
+        let msgAuthor = prompt('ТЫ КТО?');
+        let msgText = prompt('ПИШИ');
+
+        let newMsg = new Message(msgAuthor, msgText);
+        document.querySelector('.div1').innerHTML += newMsg.render()
+      }
+  </script>
+</body>
+</html>
