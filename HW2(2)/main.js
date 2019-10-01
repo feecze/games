@@ -2,7 +2,7 @@ class Hamburger {
   constructor(size, stuffing) {
   this.size = size;
   this.stuffing = stuffing;
-  
+  this.topping;
   console.log('Hamburger sizes: small and big, hamburger stuffing: cheese, salad, potato');
   }
 
@@ -11,80 +11,55 @@ class Hamburger {
     console.log('Hamburger toppings: spice, mayo')
   } 
 
-  //removeTopping() {
-  //  
-  //}
-
   getToppings() {
-    console.log(this.topping);
+    return this.topping;
   }
 
   getSize() {
-    console.log(this.size);
+    return this.size;
   }
 
   getStuffing() {
-    console.log(this.stuffing)
+    return this.stuffing;
   }
 
   calculatePrice() {
-    let price = 0;
-    
-    if(this.size === 'small') {
-      price += 50;
-    }else if(this.size === 'big') {
-      price += 100;
-    }else{
-      console.log('ERROR')
-    }
-
-    if (this.stuffing === 'cheese') {
-      price += 10;
-    } else if(this.stuffing === 'salad') {
-      price += 20;
-    } else if(this.stuffing === 'potato') {
-      price += 15;
-    } else{
-      console.log('ERROR')
-    }
-
-      if(this.topping = 'spice') {
-        price += 15;
-      }else if(this.topping = 'mayo') {
-        price += 20;
-      }else{
-        console.log('ERROR')
-      }
-    console.log(price);
-    }
+    let price = this._calculateByName('price');
+    console.log(`Цена бутерброда: ${price}`);
+  } 
 
   calculateCalories() {
-    let calories = 0;
+    let calories = this._calculateByName('calories');
+    console.log(`Калорий в бутерброде: ${calories}`);
+  }
 
-    if(this.size === 'small') {
-      calories += 20;
-    } else if(this.size === 'big') {
-      calories += 40;
-    } else{
-      console.log('ERROR')
-    }
-
-    if(this.stuffing === 'cheese') {
-      calories += 20;
-    } else if(this.stuffing === 'salad') {
-      calories += 5;
-    } else if(this.stuffing === 'potato') {
-      calories += 10;
-    } else{
-      console.log('ERROR')
-    }
-
-   if (this.topping = 'mayo') {
-      calories += 5;
-    } else {
-      console.log('ERROR')
-    }
-  
-  console.log(calories);
+  _calculateByName(name) {
+    let calc = 0;
+    calc += this.getSize()[name];
+    calc += this.getStuffing()[name];
+    calc += this.getToppings()[name];
+    return calc;
   }
 }
+
+let size = {
+  name: 'small',
+  price: 120,
+  calories: 60
+};
+
+let stuffing = {
+  name: 'salad',
+  price: 30,
+  calories: 15
+};
+
+let topping = {
+  name: 'spice',
+  price: 25,
+  calories: 0
+};
+let hamburger = new Hamburger(size, stuffing);
+hamburger.addTopping(topping);
+hamburger.calculateCalories();
+hamburger.calculatePrice();
