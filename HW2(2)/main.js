@@ -1,5 +1,6 @@
 class Hamburger {
   constructor(size, stuffing) {
+
     this.size = size;
     this.stuffing = stuffing;
     this.topping = [];
@@ -18,6 +19,7 @@ class Hamburger {
       let topping = this.topping[i];
     } 
     return topping;
+
   }
 
   getSize() {
