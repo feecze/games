@@ -15,11 +15,17 @@ class Hamburger {
   }
 
   getToppings() {
-    for (let i of this.topping) {
-      let topping = this.topping[i];
-    } 
-    return topping;
+    return this.topping;
+  }
 
+  calcToppings() {
+    let accToppings = this.getToppings().reduce((acc, {price, calories}) => {
+      acc.price += price;
+      acc.calories += calories;
+      return acc;
+    },
+    {price: 0, calories: 0})
+    return accToppings;
   }
 
   getSize() {
@@ -44,7 +50,7 @@ class Hamburger {
     let calc = 0;
     calc += this.getSize()[name];
     calc += this.getStuffing()[name];
-    calc += this.getToppings()[name];
+    calc += this.calcToppings()[name];
     return calc;
   }
 }
@@ -69,8 +75,8 @@ calories: 10
 
 let topping2 = {
   name: 'mayo', 
-  price: 5, 
-  calories: 35
+  price: 51, 
+  calories: 25
 };
 
 let hamburger = new Hamburger(size, stuffing);
