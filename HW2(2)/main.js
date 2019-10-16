@@ -55,32 +55,44 @@ class Hamburger {
   }
 }
 
-let size = {
-  name: 'small',
-  price: 120,
-  calories: 60
-};
+let sizes = [
+  {
+    name: 'small',
+    price: 50,
+    calories: 40
+  },
+  {
+    name: 'medium',
+    price: 80,
+    calories: 70
+  },
+  {
+    name: 'big',
+    price: 110,
+    calories: 100
+  }
+]
 
-let stuffing = {
-  name: 'salad',
-  price: 30,
-  calories: 15
-};
+let nodeSize = document.querySelector('.size');
+for (let size of sizes) {
+  let newItem = document.createElement('div');
+  newItem.classList.add('size_item')
 
-let topping =  {
-name: 'spice', 
-price: 25, 
-calories: 10
-};
+  let nodeName = document.createElement('p');
+  nodeName.textContent = size.name;
+  newItem.appendChild(nodeName);
 
-let topping2 = {
-  name: 'mayo', 
-  price: 51, 
-  calories: 25
-};
+  let nodePrice = document.createElement('p');
+  nodePrice.textContent = size.price;
+  newItem.appendChild(nodePrice);
 
-let hamburger = new Hamburger(size, stuffing);
-hamburger.addTopping(topping2);
-hamburger.addTopping(topping);
-hamburger.calculateCalories();
-hamburger.calculatePrice();
+  let nodeCalories = document.createElement('p');
+  nodeCalories.textContent = size.calories;
+  newItem.appendChild(nodeCalories);
+
+
+  let radioButton = document.createElement('radio');
+  newItem.appendChild(radioButton);
+  nodeSize.appendChild(newItem);
+
+}
