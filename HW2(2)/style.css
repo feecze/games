@@ -12,6 +12,8 @@ body {
   height: 50px;
   background-color: rgb(45, 134, 67);
   flex: 0 0 auto;
+  font-family: Hand, cursive;
+  border: 1px solid black;
 }
 
 .content {
@@ -34,6 +36,8 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  font-family: Hand, cursive;
+  border: 1px solid black;
 }
 
 .size_item {
@@ -49,9 +53,13 @@ body {
 .stuffing {
   height: 100px;
   border-bottom: 1px solid gray;
+  font-family: Hand, cursive;
+  border: 1px solid black;
 }
 
 .toppings {
   height: 100px;
   border-bottom: 1px solid gray;
+  font-family: Hand, cursive;
+  border: 1px solid black;
 }

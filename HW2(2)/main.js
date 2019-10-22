@@ -78,9 +78,16 @@ for (let size of sizes) {
   let newItem = document.createElement('div');
   newItem.classList.add('size_item')
 
-  let nodeName = document.createElement('p');
-  nodeName.textContent = size.name;
-  newItem.appendChild(nodeName);
+  let _createNodeSize = function (nodeName, node) {
+    nodeName = document.createElement('p');
+    nodeName.textContent = size.node;
+    newItem.appendChild(nodeName);
+  }
+  let nodeName;
+  _createNodeSize(nodeName, name);
+  // let nodeName = document.createElement('p');
+  // nodeName.textContent = size.name;
+  // newItem.appendChild(nodeName);
 
   let nodePrice = document.createElement('p');
   nodePrice.textContent = size.price;
