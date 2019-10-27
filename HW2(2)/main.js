@@ -1,17 +1,16 @@
 class Hamburger {
-  constructor(size, stuffing) {
-
-    this.size = size;
-    this.stuffing = stuffing;
+  constructor() {
+    this.size;
+    this.stuffing;
     this.topping = [];
-    console.log(
-      'Hamburger sizes: small and big, hamburger stuffing: cheese, salad, potato'
-    );
   }
 
   addTopping(topping) {
     this.topping.push(topping);
-    console.log('Hamburger toppings: spice, mayo');
+  }
+
+  setSize(size) {
+    this.size = size;
   }
 
   getToppings() {
@@ -55,51 +54,53 @@ class Hamburger {
   }
 }
 
-let sizes = [
-  {
+let sizes = {
+  small: {
     name: 'small',
     price: 50,
     calories: 40
   },
-  {
+  medium: {
     name: 'medium',
     price: 80,
     calories: 70
   },
-  {
+  big: {
     name: 'big',
     price: 110,
     calories: 100
   }
-]
+}
+
+let hamburger = new Hamburger();
+
+function appendNewNode(parentNode, text) {
+  let node = document.createElement('p');
+  node.textContent = text;
+  parentNode.appendChild(node);
+}
+
+function appendRadio(parentNode, value) {
+  let radioButton = document.createElement('input');
+  radioButton.setAttribute('type', 'radio');
+  radioButton.setAttribute('name', 'size');
+  radioButton.setAttribute('value', value);
+  parentNode.appendChild(radioButton);
+}
 
 let nodeSize = document.querySelector('.size');
-for (let size of sizes) {
+nodeSize.addEventListener('change', (event) => {
+  hamburger.setSize(sizes[event.target.value]);
+  console.log(hamburger);
+})
+for (let sizeName in sizes) {
   let newItem = document.createElement('div');
   newItem.classList.add('size_item')
 
-  let _createNodeSize = function (nodeName, node) {
-    nodeName = document.createElement('p');
-    nodeName.textContent = size.node;
-    newItem.appendChild(nodeName);
-  }
-  let nodeName;
-  _createNodeSize(nodeName, name);
-  // let nodeName = document.createElement('p');
-  // nodeName.textContent = size.name;
-  // newItem.appendChild(nodeName);
+  appendNewNode(newItem, `Name: ${sizes[sizeName].price}`);
+  appendNewNode(newItem, `Price: ${sizes[sizeName].price}`);
+  appendNewNode(newItem, `Calories: ${sizes[sizeName].price}`);
 
-  let nodePrice = document.createElement('p');
-  nodePrice.textContent = size.price;
-  newItem.appendChild(nodePrice);
-
-  let nodeCalories = document.createElement('p');
-  nodeCalories.textContent = size.calories;
-  newItem.appendChild(nodeCalories);
-
-
-  let radioButton = document.createElement('radio');
-  newItem.appendChild(radioButton);
+  appendRadio(newItem, sizes[sizeName].name);
   nodeSize.appendChild(newItem);
-
 }
