@@ -63,3 +63,8 @@ body {
   font-family: Hand, cursive;
   border: 1px solid black;
 }
+
+.active {
+  border: 1px solid white;
+  background-color: green;
+}

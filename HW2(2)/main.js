@@ -90,16 +90,23 @@ function appendRadio(parentNode, value) {
 
 let nodeSize = document.querySelector('.size');
 nodeSize.addEventListener('change', (event) => {
+  let nodesSize = document.querySelectorAll('.size>div');
+  for (let i = 0; i < nodesSize.length; i++) {
+    nodesSize[i].classList.remove('active');
+  }
+  
   hamburger.setSize(sizes[event.target.value]);
+  let parent = event.target.parentNode;
+  parent.classList.add('active');
   console.log(hamburger);
 })
 for (let sizeName in sizes) {
   let newItem = document.createElement('div');
   newItem.classList.add('size_item')
 
-  appendNewNode(newItem, `Name: ${sizes[sizeName].price}`);
+  appendNewNode(newItem, `Name: ${sizes[sizeName].name}`);
   appendNewNode(newItem, `Price: ${sizes[sizeName].price}`);
-  appendNewNode(newItem, `Calories: ${sizes[sizeName].price}`);
+  appendNewNode(newItem, `Calories: ${sizes[sizeName].calories}`);
 
   appendRadio(newItem, sizes[sizeName].name);
   nodeSize.appendChild(newItem);
